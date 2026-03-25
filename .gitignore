@@ -1,0 +1,44 @@
+# 1. Environment variables
+.env
+
+# 2. Build output
+/target/
+
+# 3. Maven wrapper
+/mvnw
+/mvnw.cmd
+/.mvn/wrapper/
+
+# 4. Generated artifacts
+*.jar
+*.war
+*.class
+*.log
+
+# 5. Spring Boot DevTools
+.restart/
+
+# 6. IDE files (IntelliJ IDEA)
+.idea/
+*.iml
+
+# 7. Operating system files
+.DS_Store
+Thumbs.db
+
+# 8. Docker overrides
+docker-compose.override.yml
+
+# 9. Postman exports
+*.postman_collection.json
+*.postman_environment.json
+
+# 10. Temp files
+*~
+*.swp
+*.bak
+*.tmp
+
+# 11. Embedded database files
+*.mv.db
+*.db
