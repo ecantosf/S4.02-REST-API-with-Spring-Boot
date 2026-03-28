@@ -1,44 +1,86 @@
-# 1. Environment variables
-.env
-
-# 2. Build output
-/target/
-
-# 3. Maven wrapper
-/mvnw
-/mvnw.cmd
-/.mvn/wrapper/
-
-# 4. Generated artifacts
-*.jar
-*.war
-*.class
-*.log
-
-# 5. Spring Boot DevTools
-.restart/
-
-# 6. IDE files (IntelliJ IDEA)
+# ============================================
+# 1. IDE FILES (IntelliJ IDEA, Eclipse, VS Code)
+# ============================================
 .idea/
 *.iml
+*.iws
+*.ipr
+out/
+.settings/
+.project
+.classpath
+.vscode/
 
-# 7. Operating system files
-.DS_Store
-Thumbs.db
+# ============================================
+# 2. JAVA BUILD OUTPUT
+# ============================================
+*.class
+*.jar
+*.war
+*.ear
+target/
+*.log
 
-# 8. Docker overrides
+# ============================================
+# 3. MAVEN
+# ============================================
+.mvn/
+mvnw
+mvnw.cmd
+
+# ============================================
+# 4. DATABASE FILES (H2, etc.)
+# ============================================
+*.h2.db
+*.mv.db
+*.trace.db
+*.db
+data/
+
+# ============================================
+# 5. ENVIRONMENT CONFIGURATION
+# ============================================
+.env
+*.local.properties
+application-local.properties
+application-dev.properties
+application-prod.properties
+
+# ============================================
+# 6. DOCKER
+# ============================================
 docker-compose.override.yml
+.dockerignore
 
-# 9. Postman exports
+# ============================================
+# 7. TEST OUTPUT
+# ============================================
+test-output/
+surefire-reports/
+failsafe-reports/
+
+# ============================================
+# 8. SPRING BOOT DEVTOOLS
+# ============================================
+.restart/
+
+# ============================================
+# 9. POSTMAN EXPORTS (optional)
+# ============================================
 *.postman_collection.json
 *.postman_environment.json
 
-# 10. Temp files
+# ============================================
+# 10. TEMPORARY FILES
+# ============================================
 *~
 *.swp
 *.bak
 *.tmp
+*.log
 
-# 11. Embedded database files
-*.mv.db
-*.db
+# ============================================
+# 11. OPERATING SYSTEM FILES
+# ============================================
+.DS_Store
+Thumbs.db
