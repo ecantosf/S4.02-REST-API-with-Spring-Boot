@@ -120,7 +120,7 @@ class FruitServiceTest {
     @DisplayName("Should throw exception when deleting non-existent fruit")
     void deleteFruit_WhenNotExists_ShouldThrowException() {
         when(fruitRepository.existsById(999L)).thenReturn(false);
-        
+
         assertThatThrownBy(() -> fruitService.deleteFruit(999L))
                 .isInstanceOf(ResourceNotFoundException.class)
                 .hasMessageContaining("Fruit not found with id: 999");
