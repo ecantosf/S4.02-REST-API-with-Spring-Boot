@@ -90,7 +90,7 @@ public class ProviderServiceImpl implements ProviderService {
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Provider not found with id: " + id
                 ));
-        
+
         if (!provider.getName().equals(request.name()) &&
                 providerRepository.existsByName(request.name())) {
             throw new DuplicateResourceException(
