@@ -27,7 +27,14 @@ Complete REST API for fruit inventory management with H2 database.
 - **Documentation**: Swagger/OpenAPI available at /swagger-ui.html
 
 ### Level 2 (CRUD exercise with MySQL):
-*Implementation pending*
+Complete REST API for fruit and provider management with MySQL database and JPA relationships.
+- **Entities**: Provider (id, name, country), Fruit (id, name, weightInKilos) with @OneToMany/@ManyToOne relationship
+- **Endpoints**: Full CRUD for /providers and /fruits, plus filtering fruits by provider
+- **Validation**: @NotBlank, @Positive, @Size, duplicate name validation
+- **Error Handling**: GlobalExceptionHandler with ResourceNotFoundException, DuplicateResourceException, BusinessException
+- **Testing**: Unit tests (Mockito) and integration tests (MockMvc) - 39 tests total
+- **Documentation**: Swagger/OpenAPI available at /swagger-ui.html
+- **Database**: MySQL with Docker Compose
 
 ### Level 3 (CRUD exercise with MongoDB):
 *Implementation pending*
@@ -45,8 +52,18 @@ Complete REST API for fruit inventory management with H2 database.
 - ✅ OpenAPI/Swagger documentation
 - ✅ H2 Console available at /h2-console
 
-### Level 2
-- ⏳ In progress
+### Level 2 (Completed)
+- ✅ Full CRUD operations for Provider and Fruit entities
+- ✅ MySQL database with JPA/Hibernate
+- ✅ Bidirectional relationship @OneToMany / @ManyToOne
+- ✅ DTO pattern with nested provider data in fruit responses
+- ✅ Custom exceptions: DuplicateResourceException, BusinessException
+- ✅ Global exception handling (404, 409, 400, 500)
+- ✅ Unit tests with Mockito (19 tests: 9 ProviderService + 10 FruitService)
+- ✅ Integration tests with MockMvc (20 tests: 9 ProviderController + 11 FruitController)
+- ✅ Docker multi-stage build and docker-compose for MySQL
+- ✅ OpenAPI/Swagger documentation
+- ✅ phpMyAdmin available at http://localhost:8080
 
 ### Level 3
 - ⏳ Planned
@@ -57,7 +74,7 @@ Complete REST API for fruit inventory management with H2 database.
 - Spring Data JPA
 - Spring Web
 - H2 Database (Level 1)
-- MySQL (Level 2 - planned)
+- MySQL (Level 2)
 - MongoDB (Level 3 - planned)
 - Lombok
 - Maven 3.8+
@@ -76,3 +93,10 @@ Complete REST API for fruit inventory management with H2 database.
 ```bash
 git clone https://github.com/ecantosf/S4.02-REST-API-with-Spring-Boot.git
 cd S4.02-REST-API-with-Spring-Boot
+```
+
+### Author
+Eduard Cantos Font
+
+### License
+This project is for educational purposes as part of the IT Academy course.
