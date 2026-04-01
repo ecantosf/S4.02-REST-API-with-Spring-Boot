@@ -26,7 +26,7 @@ public interface OrderRepository extends MongoRepository<Order, String> {
 
     @Query("{ 'client_name': { $regex: ?0, $options: 'i' }, 'delivery_date': { $gte: ?1 } }")
     List<Order> findOrdersByClientNamePatternAndDeliveryAfter(String clientNamePattern, LocalDate date);
-    
+
     @Query(value = "{ 'items.fruit_name': ?0 }", count = true)
     long countOrdersByFruitName(String fruitName);
 }
