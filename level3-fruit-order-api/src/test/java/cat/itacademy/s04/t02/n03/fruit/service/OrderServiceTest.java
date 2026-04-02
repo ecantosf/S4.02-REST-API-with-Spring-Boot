@@ -210,7 +210,7 @@ class OrderServiceTest {
     @DisplayName("Should throw exception when deleting non-existent order")
     void deleteOrder_WhenNotExists_ShouldThrowException() {
         when(orderRepository.existsById("999")).thenReturn(false);
-        
+
         assertThatThrownBy(() -> orderService.deleteOrder("999"))
             .isInstanceOf(ResourceNotFoundException.class)
             .hasMessageContaining("Order not found with id: 999");
