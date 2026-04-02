@@ -98,7 +98,7 @@ public class OrderServiceImpl implements OrderService {
         }
         orderRepository.deleteById(id);
     }
-    
+
     private OrderItem mapToOrderItem(OrderItemRequestDTO dto) {
         return OrderItem.builder()
             .fruitName(dto.fruitName())
