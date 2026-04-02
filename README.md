@@ -37,7 +37,14 @@ Complete REST API for fruit and provider management with MySQL database and JPA 
 - **Database**: MySQL with Docker Compose
 
 ### Level 3 (CRUD exercise with MongoDB):
-*Implementation pending*
+Complete REST API for fruit order management with MongoDB database and embedded documents.
+- **Entities**: Order (id, clientName, deliveryDate, items, status, createdAt, updatedAt), OrderItem (fruitName, quantityInKilos) as embedded document
+- **Endpoints**: POST, GET, PUT, DELETE for /orders
+- **Validation**: @NotBlank, @Positive, @Size, @NotEmpty, custom @FutureDeliveryDate (delivery date must be at least tomorrow)
+- **Error Handling**: GlobalExceptionHandler with ResourceNotFoundException, BusinessException
+- **Testing**: Unit tests (Mockito) and integration tests (MockMvc) - 21 tests total
+- **Documentation**: Swagger/OpenAPI available at /swagger-ui.html
+- **Database**: MongoDB with Docker Compose and Mongo Express
 
 ## Features
 
@@ -65,17 +72,28 @@ Complete REST API for fruit and provider management with MySQL database and JPA 
 - ✅ OpenAPI/Swagger documentation
 - ✅ phpMyAdmin available at http://localhost:8080
 
-### Level 3
-- ⏳ Planned
+### Level 3 (Completed)
+- ✅ Full CRUD operations for Order entity
+- ✅ MongoDB database with Spring Data MongoDB
+- ✅ Embedded documents (OrderItem inside Order)
+- ✅ DTO pattern with nested item data
+- ✅ Custom validation: @FutureDeliveryDate (delivery date must be at least tomorrow)
+- ✅ Global exception handling (404, 400, 500)
+- ✅ Unit tests with Mockito (10 tests)
+- ✅ Integration tests with MockMvc (11 tests)
+- ✅ Docker multi-stage build and docker-compose for MongoDB
+- ✅ OpenAPI/Swagger documentation
+- ✅ Mongo Express available at http://localhost:8081
 
 ## Technologies
 - Java 21
 - Spring Boot 3.2.4
 - Spring Data JPA
+- Spring Data MongoDB
 - Spring Web
 - H2 Database (Level 1)
 - MySQL (Level 2)
-- MongoDB (Level 3 - planned)
+- MongoDB (Level 3)
 - Lombok
 - Maven 3.8+
 - Docker Desktop (for Level 2 and Level 3)
