@@ -9,12 +9,12 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderItem {
-
-    @Field("fruit name")
+    
+    @Field("fruit_name")
     @NotBlank(message = "Fruit name is required")
     @Size(min = 2, max = 50, message = "Fruit name must be between 2 and 50 characters")
     private String fruitName;
-
+    
     @Field("quantity")
     @NotNull(message = "Quantity is required")
     @Positive(message = "Quantity must be positive")
