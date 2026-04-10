@@ -4,7 +4,8 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
