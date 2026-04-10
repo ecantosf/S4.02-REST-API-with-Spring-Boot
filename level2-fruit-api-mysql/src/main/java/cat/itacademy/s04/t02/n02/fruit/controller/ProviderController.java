@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,9 @@ public class ProviderController {
     public ResponseEntity<ProviderResponseDTO> createProvider(
             @Valid @RequestBody ProviderRequestDTO request) {
         ProviderResponseDTO created = providerService.createProvider(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        return ResponseEntity
+                .created(URI.create("/providers/" + created.id()))
+                .body(created);
     }
 
     @GetMapping

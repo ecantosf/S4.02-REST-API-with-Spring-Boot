@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,9 @@ public class OrderController {
     public ResponseEntity<OrderResponseDTO> createOrder(
             @Valid @RequestBody OrderRequestDTO request) {
         OrderResponseDTO created = orderService.createOrder(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        return ResponseEntity
+                .created(URI.create("/orders/" + created.id()))
+                .body(created);
     }
 
     @GetMapping
